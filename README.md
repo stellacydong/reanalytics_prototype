@@ -1,28 +1,30 @@
-# ReAnalytics: Reinsurance Co-Pilot
+# ReAnalytics: The Reinsurance Co-Pilot
 
-🚀 A Streamlit App powered by LangChain, RAG, and PPO to revolutionize reinsurance analytics.
+🚀 Transforming reinsurance analytics with AI — powered by LangChain, Retrieval-Augmented Generation (RAG), and Proximal Policy Optimization (PPO).
 
 ---
-## 🧠 Key Features
+
+## 🧠 Core Capabilities
 
 - **Treaty AI Assistant**  
-  Upload a reinsurance treaty (PDF or text) and ask intelligent questions.
-  - Uses RAG (Retrieval Augmented Generation) over treaty content
-  - Local Mistral-7B or any LLM for smart answers
+  Upload a reinsurance treaty (text or PDF) and ask precise, intelligent questions.  
+  - Retrieval-Augmented Generation (RAG) powered by local Mistral-7B or any LLM
+  - Instant extraction of limits, terms, and conditions
 
 - **Reserve Optimization Simulator**  
-  Upload synthetic claims data and simulate:
-  - Traditional reserving (Chain Ladder, fixed reserve multiplier)
-  - AI reserve optimization (PPO agent)
+  Upload synthetic claims data and run simulations:
+  - Traditional reserving (Chain Ladder / fixed factor method)
+  - AI-driven reserve optimization using PPO reinforcement learning agent
 
-- **Risk Dashboard**  
-  Instantly view:
-  - CVaR (Conditional Value at Risk) for tail risk control
-  - Solvency ratios
-  - Reserve distribution plots (Traditional vs PPO)
+- **Risk Insights Dashboard**  
+  Instantly visualize:
+  - Tail Risk metrics (Conditional Value at Risk - CVaR)
+  - Solvency Ratios
+  - Reserve distributions (Traditional vs AI-optimized)
 
 ---
-## 📦 App Structure
+
+## 📂 Project Structure
 
 ```plaintext
 reanalytics_prototype/
@@ -40,78 +42,54 @@ reanalytics_prototype/
 │   ├── sample_treaty.txt
 │   ├── synthetic_claims.csv
 ├── requirements.txt
-⚡ Quickstart
-
-Clone this repo:
-git clone https://github.com/yourusername/reanalytics_prototype.git
-cd reanalytics_prototype
-Install dependencies:
-pip install -r requirements.txt
-Run the app:
-streamlit run app/streamlit_app.py
-🛠️ Requirements
-
-Python 3.10+
-Key Python libraries:
-streamlit
-langchain
-langchain-community
-sentence-transformers
-faiss-cpu
-transformers
-torch
-plotly
-✨ Demo
-
-Watch our 3-minute product walkthrough: (link)
-
-Visit the live app: (link to Hugging Face Space)
-
-📩 Contact
-
-Created by [Stella Dong] | [stellacydong@gmail.com]
-
-Let's reimagine reinsurance together.
-
+```
 
 ---
 
-# 📄 One-Page "Product Sheet" (Investor Friendly PDF)
+## ⚡ Quickstart
 
-```plaintext
----------------------------------------------------------
-🛡️ ReAnalytics: The Reinsurance Co-Pilot
----------------------------------------------------------
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/reanalytics_prototype.git
+   cd reanalytics_prototype
+   ```
 
-Overview:
-- An AI-driven assistant for reinsurance underwriting and reserving.
-- Combines Retrieval-Augmented Generation (RAG) and Reinforcement Learning (RL).
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Core Features:
-✅ Upload and analyze treaties — Ask questions, extract limits, terms.
-✅ Run reserve optimization — Compare traditional vs AI-recommended reserves.
-✅ Dashboard — Monitor CVaR, solvency ratios, and reserve strategies.
+3. **Launch the app:**
+   ```bash
+   streamlit run app/streamlit_app.py
+   ```
 
-Technology Stack:
-- LangChain + Hugging Face Models (Mistral-7B, Sentence Transformers)
-- PPO Agent for Reserve Decision Optimization
-- Streamlit Frontend + Plotly Visualizations
+---
 
-Business Value:
-- +30% capital efficiency vs traditional methods
-- -25% tail risk (CVaR) reduction
-- Instant treaty insights without manual reading
-- Enables smarter underwriting and capital allocation
+## 🛠️ System Requirements
 
-Target Users:
-- Reinsurance companies
-- Captive insurers
-- Risk managers
-- Actuarial consultants
+- Python 3.10+
+- Key libraries:
+  - `streamlit`
+  - `langchain`
+  - `langchain-community`
+  - `sentence-transformers`
+  - `faiss-cpu`
+  - `transformers`
+  - `torch`
+  - `plotly`
 
-Demo Access:
-[Link to Hosted App]
-[Link to 3-min Product Demo]
+---
 
-Contact:
-[Stella Dong] — [stellacydong@gmail.com]
+## ✨ Demo Links
+
+- [3-minute product walkthrough](#) (link)
+- [Live app deployment](#) (Hugging Face Space link)
+
+---
+
+## 📩 Contact
+
+Created by **Stella Dong** | 📧 stellacydong@gmail.com
+
+**Let's reimagine reinsurance together.**
