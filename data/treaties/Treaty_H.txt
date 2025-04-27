@@ -1,0 +1,10 @@
+Reinsurance Treaty Agreement
+
+- Type: Quota Share
+- Retention: None
+- Limit: 50% quota share
+- Reinstatements: Not Applicable
+- Territory: Middle East and Africa
+- Exclusions: Terrorism, Political Risk
+- Effective Date: September 1, 2024
+- Ceding Commission: 32%

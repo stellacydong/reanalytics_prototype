@@ -1,0 +1,10 @@
+Reinsurance Treaty Agreement
+
+- Type: Quota Share
+- Retention: $2,000,000 per occurrence
+- Limit: $10,000,000 per occurrence
+- Reinstatements: 1 automatic at 100% additional premium
+- Territory: Worldwide excluding sanctioned countries
+- Exclusions: War, Nuclear, Terrorism
+- Effective Date: January 1, 2024
+- Ceding Commission: 30%

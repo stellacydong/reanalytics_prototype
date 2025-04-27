@@ -1,0 +1,10 @@
+Reinsurance Treaty Agreement
+
+- Type: Excess of Loss
+- Retention: $5,000,000 per risk
+- Limit: $25,000,000 in excess of retention
+- Reinstatements: 2 automatic at 90% additional premium
+- Territory: United States and Canada
+- Exclusions: Asbestos, Pollution
+- Effective Date: July 1, 2024
+- Ceding Commission: 20%

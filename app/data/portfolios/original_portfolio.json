@@ -1,0 +1,13 @@
+[
+    {
+        "retention": 2000000,
+        "limit": 10000000,
+        "reinstatements": 1,
+        "exclusions": [
+            "War",
+            "Nuclear",
+            "Terrorism"
+        ],
+        "treaty_name": "Treaty_A"
+    }
+]

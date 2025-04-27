@@ -1,0 +1,10 @@
+Reinsurance Treaty Agreement
+
+- Type: Facultative
+- Retention: $1,000,000 per event
+- Limit: $8,000,000 per event
+- Reinstatements: None
+- Territory: Europe (excluding Russia)
+- Exclusions: Political Risk, Nuclear
+- Effective Date: January 1, 2025
+- Ceding Commission: 25%

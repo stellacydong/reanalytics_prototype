@@ -1,0 +1,10 @@
+Reinsurance Treaty Agreement
+
+- Type: Facultative
+- Retention: $3,000,000
+- Limit: $12,000,000
+- Reinstatements: 1 automatic
+- Territory: Australia and New Zealand
+- Exclusions: Natural Catastrophes
+- Effective Date: November 1, 2024
+- Ceding Commission: 24%

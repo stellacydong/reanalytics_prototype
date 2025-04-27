@@ -1,0 +1,10 @@
+Reinsurance Treaty Agreement
+
+- Type: Surplus Share
+- Retention: $500,000
+- Limit: Up to 5 times retention
+- Reinstatements: 1 automatic at prorated premium
+- Territory: Asia Pacific
+- Exclusions: Flood, Earthquake
+- Effective Date: June 1, 2024
+- Ceding Commission: 22.5%

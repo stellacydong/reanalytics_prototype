@@ -1,0 +1,10 @@
+Reinsurance Treaty Agreement
+
+- Type: Stop Loss
+- Retention: 75% Loss Ratio
+- Limit: 150% Loss Ratio
+- Reinstatements: None
+- Territory: Global
+- Exclusions: Cyber Risk
+- Effective Date: March 1, 2024
+- Ceding Commission: Sliding Scale
