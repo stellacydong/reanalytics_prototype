@@ -1,41 +1,80 @@
 import os
-from langchain_community.vectorstores import FAISS
+from pathlib import Path
+
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.docstore.document import Document
+from langchain_community.vectorstores import FAISS
+from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.prompts import PromptTemplate
+from langchain.chains import RetrievalQA
+
 from mistral_langchain_wrapper import MistralLLM
 
-DATA_DIR = "data/treaty_samples"
 
-# 1. Load treaty files
-def load_treaties(path=DATA_DIR):
-    docs = []
-    for filename in os.listdir(path):
-        if filename.endswith(".txt"):
-            with open(os.path.join(path, filename), "r") as file:
-                content = file.read()
-                docs.append(Document(page_content=content, metadata={"source": filename}))
-    return docs
+# -------------------------
+# CONFIG
+# -------------------------
+DATA_DIR = Path("data/treaty_samples/")
+VECTOR_DB_PATH = Path("outputs/faiss_index")
+EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
-# 2. Embed and store
-def create_faiss_retriever(docs):
-    splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
-    split_docs = splitter.split_documents(docs)
-    embedder = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    return FAISS.from_documents(split_docs, embedder)
+# -------------------------
+# Load / Ingest Docs
+# -------------------------
+def load_documents(directory: Path):
+    documents = []
+    for file in directory.glob("*.txt"):
+        with open(file, "r", encoding="utf-8") as f:
+            text = f.read()
+            documents.append(Document(page_content=text, metadata={"source": file.name}))
+    return documents
 
-# 3. Query treaty RAG
-def query_treaty(query: str, retriever, llm):
-    retrieved_docs = retriever.similarity_search(query, k=4)
-    context = "\n\n".join([doc.page_content for doc in retrieved_docs])
-    prompt = f"Given the treaty clauses below, answer the question:\n\n{context}\n\nQuestion: {query}"
-    return llm.invoke(prompt)
 
-if __name__ == "__main__":
+# -------------------------
+# Build Vector Index
+# -------------------------
+def build_or_load_vectorstore():
+    if VECTOR_DB_PATH.exists():
+        print("🔁 Loading existing FAISS index...")
+        return FAISS.load_local(str(VECTOR_DB_PATH), HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME))
+
+    print("📚 Ingesting and indexing treaty documents...")
+    docs = load_documents(DATA_DIR)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+    chunks = splitter.split_documents(docs)
+
+    embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
+    vectorstore = FAISS.from_documents(chunks, embeddings)
+    vectorstore.save_local(str(VECTOR_DB_PATH))
+    return vectorstore
+
+
+# -------------------------
+# Query Function
+# -------------------------
+def query_treaty(question: str) -> str:
+    print("🔍 Running RAG query...")
+    vectorstore = build_or_load_vectorstore()
+    retriever = vectorstore.as_retriever()
+
+    # Inject your LLM wrapper
     llm = MistralLLM()
-    docs = load_treaties()
-    retriever = create_faiss_retriever(docs)
 
-    # Example query
-    result = query_treaty("What is the retention level specified?", retriever, llm)
-    print("\n🔍 RAG Result:\n", result)
+    qa_chain = RetrievalQA.from_chain_type(
+        llm=llm,
+        retriever=retriever,
+        chain_type="stuff",
+        return_source_documents=False
+    )
+
+    return qa_chain.run(question)
+
+
+# -------------------------
+# CLI Test
+# -------------------------
+if __name__ == "__main__":
+    query = "What coverage limits are mentioned in the treaty?"
+    answer = query_treaty(query)
+    print("\n💬 RAG Answer:\n", answer)
+
