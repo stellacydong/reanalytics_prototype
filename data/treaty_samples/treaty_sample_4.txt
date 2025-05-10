@@ -1,12 +1,12 @@
 Reinsurance Treaty Agreement #4
 
-Type: Quota Share
+Type: Excess of Loss
 Retention: $5M per occurrence
-Limit: $17M per occurrence
-Reinstatements: 2 automatic at 100% additional premium
-Territory: Europe
-Exclusions: Cyber, Nuclear
-Effective Date: 2023-05-02
-Ceding Commission: 35%
-Cedent: Ford, George and Lynn
-Reinsurer: Smith PLC
+Limit: $21M per occurrence
+Reinstatements: 0 automatic
+Territory: North America
+Exclusions: Terrorism, Pandemic
+Effective Date: 2024-03-17
+Ceding Commission: 20%
+Cedent: White-Gonzales
+Reinsurer: Morgan-Gray

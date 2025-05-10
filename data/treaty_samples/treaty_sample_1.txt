@@ -1,13 +1,12 @@
-
 Reinsurance Treaty Agreement #1
 
 Type: Quota Share
-Retention: $2M per occurrence
-Limit: $18M per occurrence
-Reinstatements: 0 automatic at 100% additional premium
-Territory: Africa
-Exclusions: War, Nuclear
-Effective Date: 2023-11-15
-Ceding Commission: 25%
-Cedent: Sanchez, Byrd and Miller
-Reinsurer: Johnston, Robinson and Peters
+Retention: $5M per occurrence
+Limit: $20M per occurrence
+Reinstatements: 2 automatic
+Territory: North America
+Exclusions: Pandemic, War
+Effective Date: 2023-08-22
+Ceding Commission: 30%
+Cedent: Rodriguez LLC
+Reinsurer: Richardson Ltd

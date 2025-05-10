@@ -1,12 +1,12 @@
 Reinsurance Treaty Agreement #8
 
-Type: Stop Loss
-Retention: $4M per occurrence
-Limit: $13M per occurrence
-Reinstatements: 0 automatic at 100% additional premium
+Type: Aggregate XL
+Retention: $1M per occurrence
+Limit: $21M per occurrence
+Reinstatements: 2 automatic
 Territory: North America
-Exclusions: Cyber, Pandemic
-Effective Date: 2023-11-01
-Ceding Commission: 24%
-Cedent: Combs-Patterson
-Reinsurer: Johnson Ltd
+Exclusions: Cyber, Terrorism
+Effective Date: 2024-03-18
+Ceding Commission: 22%
+Cedent: Martinez-Williams
+Reinsurer: Wallace and Sons

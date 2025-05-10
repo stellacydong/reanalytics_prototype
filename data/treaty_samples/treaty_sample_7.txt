@@ -1,12 +1,12 @@
 Reinsurance Treaty Agreement #7
 
-Type: Stop Loss
-Retention: $4M per occurrence
-Limit: $20M per occurrence
-Reinstatements: 2 automatic at 100% additional premium
-Territory: Africa
-Exclusions: Cyber, War
-Effective Date: 2024-05-03
+Type: Excess of Loss
+Retention: $2M per occurrence
+Limit: $17M per occurrence
+Reinstatements: 2 automatic
+Territory: Europe
+Exclusions: War, Pandemic
+Effective Date: 2025-01-20
 Ceding Commission: 31%
-Cedent: Mcneil, Schmidt and Haney
-Reinsurer: Shaffer, Cortez and Doyle
+Cedent: Hernandez-Obrien
+Reinsurer: Ford, Mathews and Gardner

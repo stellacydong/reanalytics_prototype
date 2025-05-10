@@ -1,12 +1,12 @@
 Reinsurance Treaty Agreement #5
 
-Type: Aggregate XL
+Type: Stop Loss
 Retention: $4M per occurrence
-Limit: $48M per occurrence
-Reinstatements: 2 automatic at 100% additional premium
-Territory: Asia
-Exclusions: War, Terrorism
-Effective Date: 2023-09-24
+Limit: $41M per occurrence
+Reinstatements: 0 automatic
+Territory: Worldwide
+Exclusions: Nuclear, Pandemic
+Effective Date: 2024-08-25
 Ceding Commission: 35%
-Cedent: Alvarez, Baldwin and Benton
-Reinsurer: Jefferson-Jensen
+Cedent: Newton PLC
+Reinsurer: Chavez and Sons

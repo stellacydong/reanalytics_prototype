@@ -1,13 +1,12 @@
-
 Reinsurance Treaty Agreement #2
 
-Type: Aggregate XL
+Type: Quota Share
 Retention: $5M per occurrence
-Limit: $16M per occurrence
-Reinstatements: 1 automatic at 100% additional premium
-Territory: Worldwide
-Exclusions: Nuclear, War
-Effective Date: 2023-06-08
-Ceding Commission: 23%
-Cedent: Gordon-Perez
-Reinsurer: Perry Inc
+Limit: $11M per occurrence
+Reinstatements: 0 automatic
+Territory: Africa
+Exclusions: Cyber, Pandemic
+Effective Date: 2023-06-29
+Ceding Commission: 24%
+Cedent: Wheeler-Mosley
+Reinsurer: Taylor PLC

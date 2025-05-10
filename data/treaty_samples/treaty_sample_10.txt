@@ -2,11 +2,11 @@ Reinsurance Treaty Agreement #10
 
 Type: Excess of Loss
 Retention: $3M per occurrence
-Limit: $24M per occurrence
-Reinstatements: 0 automatic at 100% additional premium
-Territory: Asia
-Exclusions: Terrorism, Nuclear
-Effective Date: 2023-08-29
-Ceding Commission: 32%
-Cedent: Boone Inc
-Reinsurer: Wise-Oliver
+Limit: $12M per occurrence
+Reinstatements: 2 automatic
+Territory: Africa
+Exclusions: Nuclear, Pandemic
+Effective Date: 2023-09-08
+Ceding Commission: 20%
+Cedent: Peterson, Knox and Ellis
+Reinsurer: White-Coleman

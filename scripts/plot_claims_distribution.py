@@ -1,30 +1,26 @@
+# scripts/plot_claims_distribution.py
+
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Locate paths
-script_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.dirname(script_dir)
-data_path = os.path.join(project_root, "data", "synthetic_claims.csv")
-output_dir = os.path.join(project_root, "outputs")
-output_path = os.path.join(output_dir, "claim_distribution.png")
+def plot_distribution(input_csv="data/synthetic_claims.csv", output_file="outputs/claim_distribution.png"):
+    if not os.path.exists(input_csv):
+        raise FileNotFoundError(f"Missing input file: {input_csv}")
 
-# Ensure output directory exists
-os.makedirs(output_dir, exist_ok=True)
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    df = pd.read_csv(input_csv)
 
-# Load the claims data
-claims_df = pd.read_csv(data_path)
+    plt.figure(figsize=(10, 6))
+    plt.hist(df['amount'], bins=50, color='skyblue', edgecolor='black')
+    plt.title("Distribution of Synthetic Claim Amounts")
+    plt.xlabel("Claim Amount ($)")
+    plt.ylabel("Frequency")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.savefig(output_file)
 
-# Plot histogram
-plt.figure(figsize=(10, 6))
-plt.hist(claims_df['amount'], bins=50, color='steelblue', edgecolor='black')
-plt.title("Distribution of Synthetic Claim Amounts")
-plt.xlabel("Claim Amount ($)")
-plt.ylabel("Frequency")
-plt.grid(True)
-plt.tight_layout()
+    print(f"📊 Saved distribution plot → {output_file}")
 
-# Save the plot
-plt.savefig(output_path)
-print(f"✅ Histogram saved to {output_path}")
-
+if __name__ == "__main__":
+    plot_distribution()

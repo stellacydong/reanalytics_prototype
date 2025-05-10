@@ -43,6 +43,9 @@ reinsurance_gpt/
 │   ├── ppo_inference.py             # PPO inference and strategy evaluation
 │   ├── mistral_model_loader.py      # Loads LLM model (e.g., Mistral 7B via Transformers)
 │   └── visualize_ppo_results.py     # Reward/strategy plots
+    ├──mistral_langchain_wrapper.py
+    ├──mistral_langchain_rag.py  
+
 │
 ├── agents/                          # LangChain RAG agents
 │   ├── treaty_rag_agent.py          # LangChain retriever for treaty docs
