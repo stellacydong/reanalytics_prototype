@@ -1,0 +1,12 @@
+Reinsurance Treaty Agreement #4
+
+Type: Quota Share
+Retention: $5M per occurrence
+Limit: $17M per occurrence
+Reinstatements: 2 automatic at 100% additional premium
+Territory: Europe
+Exclusions: Cyber, Nuclear
+Effective Date: 2023-05-02
+Ceding Commission: 35%
+Cedent: Ford, George and Lynn
+Reinsurer: Smith PLC

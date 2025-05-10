@@ -1,0 +1,12 @@
+Reinsurance Treaty Agreement #3
+
+Type: Excess of Loss
+Retention: $4M per occurrence
+Limit: $35M per occurrence
+Reinstatements: 0 automatic at 100% additional premium
+Territory: Asia
+Exclusions: Terrorism, Nuclear
+Effective Date: 2023-06-12
+Ceding Commission: 29%
+Cedent: Morris-Oliver
+Reinsurer: Bowen Inc

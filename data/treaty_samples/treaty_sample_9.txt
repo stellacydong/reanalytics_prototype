@@ -1,0 +1,12 @@
+Reinsurance Treaty Agreement #9
+
+Type: Quota Share
+Retention: $5M per occurrence
+Limit: $11M per occurrence
+Reinstatements: 0 automatic at 100% additional premium
+Territory: Europe
+Exclusions: Pandemic, Terrorism
+Effective Date: 2024-11-15
+Ceding Commission: 23%
+Cedent: Mccall-Alvarez
+Reinsurer: Duncan-Johnson

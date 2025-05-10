@@ -1,39 +1,15 @@
 # app/components/treaty_uploader.py
 
 import os
-import streamlit as st
+from django.conf import settings
 
-def upload_treaties(upload_folder="data/treaties"):
-    """
-    Streamlit component to upload single or multiple treaty files.
-    Saves uploaded files into a specified folder.
+def save_uploaded_file(uploaded_file):
+    upload_dir = os.path.join(settings.MEDIA_ROOT, 'treaties')
+    os.makedirs(upload_dir, exist_ok=True)
 
-    Args:
-        upload_folder (str): Path to the folder where treaties will be saved.
+    file_path = os.path.join(upload_dir, uploaded_file.name)
+    with open(file_path, 'wb+') as destination:
+        for chunk in uploaded_file.chunks():
+            destination.write(chunk)
 
-    Returns:
-        list: List of saved file paths
-    """
-    st.sidebar.header("Upload Treaty Files")
-
-    # Allow multiple file uploads
-    uploaded_files = st.sidebar.file_uploader(
-        "Upload one or more Treaty Documents (PDF or TXT):",
-        type=["pdf", "txt"],
-        accept_multiple_files=True
-    )
-
-    # Create directory if it doesn't exist
-    os.makedirs(upload_folder, exist_ok=True)
-
-    saved_files = []
-
-    if uploaded_files:
-        for file in uploaded_files:
-            file_path = os.path.join(upload_folder, file.name)
-            with open(file_path, "wb") as f:
-                f.write(file.getbuffer())
-            saved_files.append(file_path)
-        st.sidebar.success(f"✅ {len(saved_files)} file(s) successfully uploaded!")
-
-    return saved_files
+    return file_path

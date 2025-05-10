@@ -1,0 +1,12 @@
+Reinsurance Treaty Agreement #5
+
+Type: Aggregate XL
+Retention: $4M per occurrence
+Limit: $48M per occurrence
+Reinstatements: 2 automatic at 100% additional premium
+Territory: Asia
+Exclusions: War, Terrorism
+Effective Date: 2023-09-24
+Ceding Commission: 35%
+Cedent: Alvarez, Baldwin and Benton
+Reinsurer: Jefferson-Jensen

@@ -1,0 +1,12 @@
+Reinsurance Treaty Agreement #6
+
+Type: Aggregate XL
+Retention: $5M per occurrence
+Limit: $31M per occurrence
+Reinstatements: 2 automatic at 100% additional premium
+Territory: Asia
+Exclusions: War, Cyber
+Effective Date: 2023-09-08
+Ceding Commission: 25%
+Cedent: Valentine-Cruz
+Reinsurer: Walker Inc

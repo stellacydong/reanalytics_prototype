@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+  <div class="container">
+    <h1>Our Story</h1>
+    <p>Reinsurance Analytics is on a mission to revolutionize treaty structuring and risk management with modern AI.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="container">
+    <h2>Why We Started</h2>
+    <p>
+      Reinsurance treaty design is still largely manual, opaque, and expensive. As actuaries and data scientists, we saw an opportunity to change that.
+      Drawing from our experience in pricing optimization and financial risk modeling, we built an AI co-pilot that combines Reinforcement Learning with cutting-edge Language Models to guide underwriters toward optimal treaty terms—quickly, transparently, and with confidence.
+    </p>
+  </div>
+</section>
+
+<section class="vision-section">
+  <div class="container">
+    <h2>Our Vision</h2>
+    <p>
+      We believe intelligent treaty structuring should be accessible to all reinsurers—not just the largest firms. Our goal is to democratize advanced reinsurance analytics by creating tools that are:
+    </p>
+    <ul>
+      <li><strong>Interpretable:</strong> Easy to explain, easy to trust</li>
+      <li><strong>Efficient:</strong> Automating hours of analysis and iteration</li>
+      <li><strong>Interactive:</strong> Powered by natural language queries</li>
+    </ul>
+  </div>
+</section>
+
+<section class="founders-section">
+  <div class="container">
+    <h2>Meet the Founders</h2>
+    <div class="founder-card">
+      <img src="{% static 'img/founder.jpg' %}" alt="Founder photo">
+      <div class="founder-bio">
+        <h3>Stella Dong</h3>
+        <p>
+          With a background in AI and actuarial science, Stella brings deep expertise in RL-based financial modeling. She previously led pricing algorithm development at Prescryptive Health and holds a PhD in computational neuroscience.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="yc-section">
+  <div class="container">
+    <h2>Backed by YC</h2>
+    <p>
+      Reinsurance Analytics is currently applying to Y Combinator to accelerate our mission. If you're a reinsurer, investor, or engineer who wants to get involved, we'd love to talk.
+    </p>
+    <a href="/contact/" class="cta-button">Get in Touch</a>
+  </div>
+</section>
+{% endblock %}

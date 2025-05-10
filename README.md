@@ -1,95 +1,119 @@
-# ReAnalytics: The Reinsurance Co-Pilot
+# TreatyStructuring-GPT
 
-🚀 Transforming reinsurance analytics with AI — powered by LangChain, Retrieval-Augmented Generation (RAG), and Proximal Policy Optimization (PPO).
+> **LLM + RAG + RL for Intelligent Reinsurance Treaty Design**  
 
----
+## 🌍 Overview
 
-## 🧠 Core Capabilities
+**TreatyStructuring-GPT** is an AI-powered assistant for reinsurance underwriters. It leverages Retrieval-Augmented Generation (RAG), large language models (LLMs), and reinforcement learning (RL) to help analyze treaty documents, simulate outcomes, and suggest optimal treaty structures.
 
-- **Treaty AI Assistant**  
-  Upload a reinsurance treaty (text or PDF) and ask precise, intelligent questions.  
-  - Retrieval-Augmented Generation (RAG) powered by local Mistral-7B or any LLM
-  - Instant extraction of limits, terms, and conditions
+### 🔍 What It Does
 
-- **Reserve Optimization Simulator**  
-  Upload synthetic claims data and run simulations:
-  - Traditional reserving (Chain Ladder / fixed factor method)
-  - AI-driven reserve optimization using PPO reinforcement learning agent
+- 📄 Summarizes treaty contracts using LLMs (Mistral, OpenRouter, etc.)
+- 🧠 Uses LangChain + FAISS to enable retrieval from uploaded treaties
+- 🤖 Optimizes treaty structures (retention, limit) using a PPO-based RL agent
+- 📈 Visualizes outcomes, rewards, and capital efficiency metrics
+- 💬 Allows natural language queries like:
+  > "What if we raise the attachment point to $5M?"
 
-- **Risk Insights Dashboard**  
-  Instantly visualize:
-  - Tail Risk metrics (Conditional Value at Risk - CVaR)
-  - Solvency Ratios
-  - Reserve distributions (Traditional vs AI-optimized)
+## 🛠️ Architecture
 
----
+- `Streamlit` for interactive UI
+- `LangChain + FAISS` for document retrieval (RAG)
+- `Transformers` for LLM summarization
+- `Gymnasium + PPO` for strategy simulation
+- `Matplotlib / Seaborn` for plotting
 
-## 📂 Project Structure
-
-```plaintext
-reanalytics_prototype/
-├── app/
-│   ├── components/
-│   │   ├── dashboard.py
-│   │   ├── uploaders.py
-│   ├── streamlit_app.py
-├── agents/
-│   ├── treaty_rag_agent.py
-├── models/
-│   ├── mistral_model_loader.py
-│   ├── ppo_reserving_agent.py
-├── data/
-│   ├── sample_treaty.txt
-│   ├── synthetic_claims.csv
+reinsurance_gpt/
+│
+├── app/                             # Frontend: Streamlit UI
+│   ├── streamlit_app.py             # Entry point for the interactive assistant
+│   ├── components/                  # Modular UI and logic handlers
+│   │   ├── treaty_uploader.py
+│   │   ├── treaty_parser.py
+│   │   ├── rl_visualizer.py
+│   │   └── summary_view.py
+│   └── static/                      # CSS / JS for Streamlit customization
+│       ├── css/
+│       └── img/
+│
+├── models/                          # ML models
+│   ├── ppo_structuring_agent.py     # PPO-based Gym RL environment
+│   ├── ppo_trainer.py               # PPO training script
+│   ├── ppo_inference.py             # PPO inference and strategy evaluation
+│   ├── mistral_model_loader.py      # Loads LLM model (e.g., Mistral 7B via Transformers)
+│   └── visualize_ppo_results.py     # Reward/strategy plots
+│
+├── agents/                          # LangChain RAG agents
+│   ├── treaty_rag_agent.py          # LangChain retriever for treaty docs
+│   └── retriever_utils.py           # FAISS, embedding, context chunking
+│
+├── data/                            # Input/Output datasets
+│   ├── treaty_samples/              # Treaty .txt files
+│   ├── synthetic_claims.csv         # Simulated claims
+│   └── ppo_simulation.csv           # PPO rollout results
+│
+├── scripts/                         # Utilities
+│   ├── generate_synthetic_claims.py
+│   ├── generate_treaty_samples.py
+│   └── plot_claims_distribution.py
+│
+├── outputs/                         # Reports, logs
+│   └── training_logs/
+│
 ├── requirements.txt
-```
+├── Dockerfile
+├── .streamlit/config.toml
+├── LICENSE
+└── README.md                       
 
----
 
-## ⚡ Quickstart
+## 📦 Features
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/reanalytics_prototype.git
-   cd reanalytics_prototype
-   ```
+| Module              | Description                                                |
+|---------------------|------------------------------------------------------------|
+| 🧾 Treaty Parser     | Reads `.txt` treaties and chunked paragraphs for RAG       |
+| 💡 LLM Summarizer    | Extracts key clauses, exclusions, attachment terms         |
+| 🔁 RL Optimizer      | Trains PPO agent to optimize capital efficiency            |
+| 📊 Visualizer        | Plots reward evolution and strategy comparison             |
+| 🗣️ Natural Language  | Chat interface powered by LangChain for impact analysis    |
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 🚀 How to Run
 
-3. **Launch the app:**
-   ```bash
-   streamlit run app/streamlit_app.py
-   ```
+```bash
+# Install dependencies
+pip install -r requirements.txt
 
----
+# Launch the app
+streamlit run app/streamlit_app.py
+````
 
-## 🛠️ System Requirements
+## 📁 Sample Data
 
-- Python 3.10+
-- Key libraries:
-  - `streamlit`
-  - `langchain`
-  - `langchain-community`
-  - `sentence-transformers`
-  - `faiss-cpu`
-  - `transformers`
-  - `torch`
-  - `plotly`
+* `data/treaty_samples/` – sample treaty text files
+* `data/synthetic_claims.csv` – simulated loss experience
+* `outputs/ppo_simulation.csv` – PPO evaluation logs
 
----
+## 🧠 Example Use Case
 
-## ✨ Demo Links
+Upload a treaty, ask:
 
-- [3-minute product walkthrough](#) (link)
-- [Live app deployment](#) (Hugging Face Space link)
+> "What if we add a limit of \$10M and reduce retention to \$1M?"
 
----
+See:
 
-## 📩 Contact
+* 📘 Suggested clauses
+* 🎯 PPO-optimized strategy
+* 📊 Impact on risk metrics
 
-Created by **Stella Dong** | 📧 stellacydong@gmail.com
+## 📚 Research & Vision
 
-**Let's reimagine reinsurance together.**
+This project underpins the paper:
+
+**“TreatyStructuring-GPT: Retrieval-Augmented Language and Reinforcement Learning for Intelligent Reinsurance Treaty Design”**
+
+Submitted to: *AAAI, IJCAI, NeurIPS, or Risk Management & Insurance Review*.
+
+## 📜 License
+
+MIT
+

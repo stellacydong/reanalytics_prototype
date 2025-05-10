@@ -1,0 +1,12 @@
+Reinsurance Treaty Agreement #7
+
+Type: Stop Loss
+Retention: $4M per occurrence
+Limit: $20M per occurrence
+Reinstatements: 2 automatic at 100% additional premium
+Territory: Africa
+Exclusions: Cyber, War
+Effective Date: 2024-05-03
+Ceding Commission: 31%
+Cedent: Mcneil, Schmidt and Haney
+Reinsurer: Shaffer, Cortez and Doyle

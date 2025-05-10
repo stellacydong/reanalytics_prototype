@@ -1,59 +1,29 @@
-# app/components/report_generator.py
-
-from fpdf import FPDF
 import os
+import matplotlib.pyplot as plt
 
-class PortfolioReportGenerator:
+def generate_summary_plot(rewards, output_dir="app/static/img"):
     """
-    Generate a simple PDF report comparing original and optimized portfolios.
+    Generate and save a line plot of PPO rewards over time.
+
+    Args:
+        rewards (list): A list of reward values (floats or ints).
+        output_dir (str): Directory path to save the image (inside Django static).
+
+    Returns:
+        str: Full file path of the saved image.
     """
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, "summary_plot.png")
 
-    def __init__(self, output_folder="data/reports"):
-        self.output_folder = output_folder
-        os.makedirs(self.output_folder, exist_ok=True)
+    # Plotting
+    plt.figure(figsize=(10, 4))
+    plt.plot(rewards, marker='o', linestyle='-', color='royalblue')
+    plt.title("Cumulative PPO Rewards")
+    plt.xlabel("Step")
+    plt.ylabel("Reward")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.savefig(output_path)
+    plt.close()
 
-    def generate_report(self, original_portfolio, optimized_portfolio, output_filename="portfolio_optimization_report.pdf"):
-        pdf = FPDF()
-        pdf.add_page()
-
-        # Title
-        pdf.set_font("Arial", 'B', 16)
-        pdf.cell(0, 10, "Treaty Portfolio Optimization Report", ln=True, align="C")
-        pdf.ln(10)
-
-        # Original Portfolio Summary
-        pdf.set_font("Arial", 'B', 12)
-        pdf.cell(0, 10, "Original Portfolio", ln=True)
-        pdf.set_font("Arial", '', 11)
-        for treaty in original_portfolio:
-            treaty_line = f"{treaty['treaty_name']}: Retention ${treaty['retention']:,.0f}, Limit ${treaty['limit']:,.0f}"
-            pdf.cell(0, 8, treaty_line, ln=True)
-
-        pdf.ln(8)
-
-        # Optimized Portfolio Summary
-        pdf.set_font("Arial", 'B', 12)
-        pdf.cell(0, 10, "Optimized Portfolio", ln=True)
-        pdf.set_font("Arial", '', 11)
-        for treaty in optimized_portfolio:
-            treaty_line = f"{treaty['treaty_name']}: Retention ${treaty['retention']:,.0f}, Limit ${treaty['limit']:,.0f}"
-            pdf.cell(0, 8, treaty_line, ln=True)
-
-        pdf.ln(10)
-
-        # Save the PDF
-        report_path = os.path.join(self.output_folder, output_filename)
-        pdf.output(report_path)
-
-        return report_path
-
-# Example Usage
-if __name__ == "__main__":
-    from models.portfolio_aggregator import PortfolioAggregator
-
-    aggregator = PortfolioAggregator()
-    portfolio = aggregator.build_portfolio()
-
-    generator = PortfolioReportGenerator()
-    generator.generate_report(portfolio, portfolio, output_filename="example_report.pdf")
-    print("Example report generated!")
+    return output_path
