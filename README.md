@@ -23,6 +23,7 @@
 - `Gymnasium + PPO` for strategy simulation
 - `Matplotlib / Seaborn` for plotting
 
+```
 reinsurance_gpt/
 │
 ├── app/                             # Frontend: Streamlit UI
@@ -65,7 +66,7 @@ reinsurance_gpt/
 ├── .streamlit/config.toml
 ├── LICENSE
 └── README.md                       
-
+```
 
 ## 📦 Features
 
