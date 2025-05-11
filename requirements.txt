@@ -1,1 +1,15 @@
-# Requirements file
+streamlit
+pandas
+numpy
+matplotlib
+scikit-learn
+transformers
+torch
+accelerate
+langchain
+langchain-community
+sentence-transformers
+faiss-cpu
+gymnasium
+stable-baselines3
+faker

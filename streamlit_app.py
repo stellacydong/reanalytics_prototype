@@ -12,9 +12,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Import your local modules
-from mistral_model_loader import summarize_treaty  # assumes this function exists
-from ppo_inference import run_treaty_optimizer     # assumes this function exists
-from visualize_ppo_results import plot_rewards     # assumes this returns matplotlib fig
+from models.mistral_model_loader import summarize_treaty  # assumes this function exists
+from models.ppo_inference import run_inference
+
+from models.visualize_ppo_results import plot_training_curve
 
 # App title and layout
 st.set_page_config(page_title="Treaty Structuring Assistant", layout="wide")
@@ -56,7 +57,7 @@ if run_button and claims_file:
     st.subheader("🤖 Optimization Output")
     
     with st.spinner("Running PPO optimizer..."):
-        result = run_treaty_optimizer(treaty_path, claims_path)
+        result = run_inference(treaty_path, claims_path)
         st.success("Optimization complete.")
         
         st.markdown(f"""
@@ -67,7 +68,7 @@ if run_button and claims_file:
 
     # --- Plot reward curve ---
     st.subheader("📈 PPO Training Rewards")
-    fig = plot_rewards(result['rewards'])  # assumes it returns a Matplotlib figure
+    fig = plot_training_curve(result['rewards'])  # assumes it returns a Matplotlib figure
     st.pyplot(fig)
 
 # --- Footer ---
